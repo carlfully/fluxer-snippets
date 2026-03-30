@@ -1,0 +1,30 @@
+/* ----------------------------------------------------------------------- */
+/* simple ui-rounding multiplier
+/* controls fluxer's theme rounding wherever variables are used.
+/* ----------------------------------------------------------------------- */
+
+:root {
+	/* change this value to control the ui's overall rounding strength 
+	* 1 is the default, 0 removes most rounding. */
+	--ThemeRoundingMultiplier: 1;
+	
+	/* leave these alone unless you know what youre doing */
+	--radius-sm: calc(0.25rem * var(--ThemeRoundingMultiplier));
+	--radius-md: calc(0.375rem * var(--ThemeRoundingMultiplier));
+	--radius-lg: calc(0.5rem * var(--ThemeRoundingMultiplier));
+	--radius-xl: calc(0.75rem * var(--ThemeRoundingMultiplier));
+	--radius-2xl: calc(1rem * var(--ThemeRoundingMultiplier));
+	--radius-full: calc(9999px * var(--ThemeRoundingMultiplier));
+	--media-border-radius: calc(4px * var(--ThemeRoundingMultiplier));
+	--message-reply-spine-radius: calc(6px * var(--ThemeRoundingMultiplier));
+	--spoiler-border-radius: calc(6px * var(--ThemeRoundingMultiplier));
+}
+
+
+/* or use this to remove rounding entirely:
+
+* {
+	border-radius: 0px!important;
+}
+
+*/
