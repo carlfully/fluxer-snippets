@@ -4,7 +4,7 @@ Welcome! This repo contains a collection CSS snippets for [Fluxer](https://githu
 # List of snippets
 - [colorful-titlebar-buttons](./colorful-titlebar-buttons.css) <sub>*by @deeruwu*</sub> : modifies the titlebar buttons to be more colorful and have style
   
-  <img src="./repo-assets/colored-titlebar-buttons.gif" alt="displaying the snippet visually"/>
+  <img src="./repo-assets/colorful-titlebar-buttons.gif" alt="displaying the snippet visually"/>
 - [dm-fav-icons](./snippets/dm-fav-icons.css) <sub>*by @carlfully*</sub> : lets you customise the DMs/Main page and Favourite buttons
 
   <img src="./repo-assets/dm-fav-icons.webp" alt="displaying the snippet visually" height="200px"/>
