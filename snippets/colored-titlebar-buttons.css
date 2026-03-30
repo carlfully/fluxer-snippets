@@ -1,0 +1,97 @@
+:root {
+    --titlebar-minimize-color: #008ce3;
+    --titlebar-maximize-color: #a17cdf;
+    --titlebar-close-color: #f076ab;
+}
+
+/* titlebar */
+[class*='NativeTitlebar.module__titlebar_'] {
+    padding-right: 0px;
+}
+/* titlebar button container */
+[class*='NativeTitlebar.module__controls_'] {
+    gap: 0px;
+    height: 100%;
+    width: fit-content;
+}
+/* titlebar button top borders */
+[class*='NativeTitlebar.module__controlButton_']::before {
+    content: '';
+    width: 3rem;
+    height: 0.3rem;
+    position: absolute;
+    top: 0px;
+    background: transparent;
+}
+
+/* titlebar button */
+[class*='NativeTitlebar.module__controlButton_'] {
+    width: 3rem;
+    height: 100%;
+    border: unset;
+    border-radius: 0px 0px 0.3rem 0.3rem ; 
+    transition: var(--transition-normal);
+}
+
+/* titlebar button icons */
+[class*='NativeTitlebar.module__controlButton_'] > svg {
+    opacity: 0;
+}
+[class*='NativeTitlebar.module__controlButton_']:hover > svg {
+    opacity: 1;
+}
+
+/* minimize border */
+[class*='NativeTitlebar.module__controlButton_'][aria-label='Minimize window']::before {
+    background: color-mix(in srgb, var(--titlebar-minimize-color) 50%, transparent);
+    border-radius: 0px 0px 0px var(--radius-full);
+}
+[class*='NativeTitlebar.module__controlButton_']:hover[aria-label='Minimize window']::before {
+    background: var(--titlebar-minimize-color);
+}
+/* maximize border */
+[class*='NativeTitlebar.module__controlButton_'][aria-label='Maximize window']::before,
+[class*='NativeTitlebar.module__controlButton_'][aria-label='Restore window']::before {
+    background: color-mix(in srgb, var(--titlebar-maximize-color) 50%, transparent);
+}
+[class*='NativeTitlebar.module__controlButton_']:hover[aria-label='Maximize window']::before,
+[class*='NativeTitlebar.module__controlButton_']:hover[aria-label='Restore window']::before {
+    background: var(--titlebar-maximize-color);
+}
+/* close border */
+[class*='NativeTitlebar.module__controlButton_'][aria-label='Close window']::before {
+    background: color-mix(in srgb, var(--titlebar-close-color) 50%, transparent);
+}
+[class*='NativeTitlebar.module__controlButton_']:hover[aria-label='Close window']::before {
+    background: var(--titlebar-close-color);
+}
+
+
+/* minimize bg */
+[class*='NativeTitlebar.module__controlButton_']:hover[aria-label='Minimize window'] {
+    background: color-mix(in srgb, var(--titlebar-minimize-color) 30%, transparent);
+}
+/* maximize bg */
+[class*='NativeTitlebar.module__controlButton_']:hover[aria-label='Maximize window'],
+[class*='NativeTitlebar.module__controlButton_']:hover[aria-label='Restore window'] {
+    background: color-mix(in srgb, var(--titlebar-maximize-color) 30%, transparent);
+}
+/* close bg */
+[class*='NativeTitlebar.module__controlButton_']:hover[aria-label='Close window'] {
+    background: color-mix(in srgb, var(--titlebar-close-color) 30%, transparent);
+}
+
+
+/* minimize icon */
+[class*='NativeTitlebar.module__controlButton_']:hover[aria-label='Minimize window'] > svg {
+    fill: var(--titlebar-minimize-color);
+}
+/* maximize icon */
+[class*='NativeTitlebar.module__controlButton_']:hover[aria-label='Maximize window'] > svg,
+[class*='NativeTitlebar.module__controlButton_']:hover[aria-label='Restore window'] > svg {
+    fill: var(--titlebar-maximize-color);
+}
+/* close icon */
+[class*='NativeTitlebar.module__controlButton_']:hover[aria-label='Close window'] > svg {
+    fill: var(--titlebar-close-color);
+}
