@@ -1,0 +1,6 @@
+/* expanded css textarea by @DeviMorris#1111 */
+
+textarea.FormSurface\.module__surface___XzQ4ZT.Input\.module__input___ZGQ3MT.Scroller\.module__scroller___ZTgyZD {
+  resize: vertical !important; /* replace with "height: " to have a fixed area*/
+  max-height: 900px !important;
+}
