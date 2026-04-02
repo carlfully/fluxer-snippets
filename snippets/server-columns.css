@@ -17,7 +17,7 @@
     grid-template-columns: repeat(2, 1fr);
 }
 
-[class*="GuildsLayout.module__guildListGuildsSection_"], [class*="GuildsLayout.module__guildListItems___XzkwZG"] {
+[class*="GuildsLayout.module__guildListGuildsSection_"], [class*="GuildsLayout.module__guildListItems"] {
     display: grid;
     grid-template-columns: repeat(var(--columns), 1fr);
     vertical-align: middle;
