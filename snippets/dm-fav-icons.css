@@ -5,30 +5,30 @@
 */
 
 /* THE CLASSES
-  Background for BOTH DM and Favourite buttons: [class*="GuildsLayout.module__fluxerButtonIcon___XzkwZG GuildsLayout.module__guildIcon___XzkwZG"]
+  Background for BOTH DM and Favourite buttons: [class*="GuildsLayout.module__fluxerButtonIcon"], [class*="GuildsLayout.module__guildIcon"]
   The Fluxer icon: [aria-label="Fluxer application symbol"]
-  The Favourite icon: [class="GuildsLayout.module__favoritesIcon___XzkwZG"]
+  The Favourite icon: [class="GuildsLayout.module__favoritesIcon"]
   Buttons' hitbox: [class*="GuildsLayout.module__guildListItem_"]
 
 */
 
 /* BUTTON BACKGROUND */
-[class*="GuildsLayout.module__fluxerButtonIcon___XzkwZG GuildsLayout.module__guildIcon___XzkwZG"] {
+[class*="GuildsLayout.module__fluxerButtonIcon"], [class*="GuildsLayout.module__guildIcon"] {
   background: url("https://fluxerusercontent.com/attachments/1477709349373092478/1482137121508758874/sakura-fluxer.svg") no-repeat;
   background-size: contain;
 }
 
 /* COLOR THE ICONS */
-[aria-label="Fluxer application symbol"], [class="GuildsLayout.module__favoritesIcon___XzkwZG"] {
+[aria-label="Fluxer application symbol"], [class*="GuildsLayout.module__favoritesIcon"] {
   color: #fff;
 }
 
 /* STAR SPIN */
-[class="GuildsLayout.module__favoritesIcon___XzkwZG"] {
+[class="GuildsLayout.module__favoritesIcon"] {
   transition: transform 0.5s;
 }
 
-[class*="GuildsLayout.module__guildListItem_"]:hover [class="GuildsLayout.module__favoritesIcon___XzkwZG"] {
+[class*="GuildsLayout.module__guildListItem_"]:hover [class*="GuildsLayout.module__favoritesIcon"] {
   transform: rotate(216deg);
 }
 
