@@ -19,7 +19,7 @@
 }
 
 /* COLOR THE ICONS */
-[aria-label="Fluxer application symbol"], [class="GuildsLayout.module__favoritesIcon"] {
+[aria-label="Fluxer application symbol"], [class*="GuildsLayout.module__favoritesIcon"] {
   color: #fff;
 }
 
@@ -28,7 +28,7 @@
   transition: transform 0.5s;
 }
 
-[class*="GuildsLayout.module__guildListItem_"]:hover [class="GuildsLayout.module__favoritesIcon"] {
+[class*="GuildsLayout.module__guildListItem_"]:hover [class*="GuildsLayout.module__favoritesIcon"] {
   transform: rotate(216deg);
 }
 
