@@ -12,7 +12,7 @@ Welcome! This repo contains a collection CSS snippets for [Fluxer](https://githu
   <img src="./repo-assets/preview-colorful-titlebar-buttons.gif" alt="displaying the snippet visually"/>
 
   
-- [discord-like-profiles](./snippets/discord-like-profiles) <sub>*by @deeruwu</sub> : mimics the look of Discord's profiles
+- [discord-like-profiles](./snippets/discord-like-profiles) <sub>*by @deeruwu*</sub> : mimics the look of Discord's profiles
 
   <img src="./repo-assets/discord-like-profiles.png" alt="displaying the snippet visually" width="200px"/>
 
