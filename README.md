@@ -40,9 +40,7 @@ Welcome! This repo contains a collection CSS snippets for [Fluxer](https://githu
 
   <img src="./repo-assets/server-columns.png" alt="displaying the snippet visually" width="200px"/>
 
-- [simple-rounding-multipliers](./snippets/simple-rounding-multipliers.css) <sub>*by @deeruwu*</sub> : makes nested corner rounding stays visually consistent
-
-  <img src="./repo-assets/simple-rounding-multipliers.png" alt="displaying the snippet visually"/>
+- [simple-rounding-multipliers](./snippets/simple-rounding-multipliers.css) <sub>*by @deeruwu*</sub> : simple setup to control (most) of fluxer's ui rounding strength with a single multiplier
 
 # How to apply
 To apply any of the snippets, you can simply copy the text inside the .css file and paste it in Fluxer's settings, more specifically inside `Look & feel > Theme > Custom Theme Tokens > Custom CSS Overrides`. We do this because simply importing with Fluxer's built-in theme sharing will just override anything else you already had, while these snippets are made to be along with your favourite theme!
