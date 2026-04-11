@@ -42,5 +42,9 @@ Welcome! This repo contains a collection CSS snippets for [Fluxer](https://githu
 
 - [simple-rounding-multipliers](./snippets/simple-rounding-multipliers.css) <sub>*by @deeruwu*</sub> : simple setup to control (most) of fluxer's ui rounding strength with a single multiplier
 
+- [oneko](./snippets/oneko.css) <sub>*by @AZ#7777*</sub> : adds the oneko kitty to your message bar. I might add it to more places later and make a general oneko snippet instead
+
+  <img src="./repo-assets/oneko-message-bar-screenshot.png" alt="displaying the snippet visually" width="200px"/>
+
 # How to apply
 To apply any of the snippets, you can simply copy the text inside the .css file and paste it in Fluxer's settings, more specifically inside `Look & feel > Theme > Custom Theme Tokens > Custom CSS Overrides`. We do this because simply importing with Fluxer's built-in theme sharing will just override anything else you already had, while these snippets are made to be along with your favourite theme!
