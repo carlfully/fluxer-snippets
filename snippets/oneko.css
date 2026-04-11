@@ -16,11 +16,11 @@
 }
 
 /* This is needed in order to display the kitty on top of the message bar. It's the only thing that might mess with another theme, if that theme changes the message bar too. */
-[class*="ChannelChatLayout.module__textareaArea___Xzc4OD"] {
+[class*="ChannelChatLayout.module__textareaArea"] {
     overflow: visible;
 }
 
-[class*="ChannelChatLayout.module__textareaArea___Xzc4OD"]::after {
+[class*="ChannelChatLayout.module__textareaArea"]::after {
     content: "";
     width: 32px;
     height: 32px;
