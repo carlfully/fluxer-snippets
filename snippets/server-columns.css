@@ -8,6 +8,10 @@
     width: calc(70px + (var(--columns) - 1) * var(--layout-guild-list-width));
 }
 
+[class*="GuildsLayout.module__GuildsLayoutContainer"] {
+    gap: 0.5rem;
+}
+
 [class*="GuildsLayout.module__contentContainer_"] {
     padding-left: calc( (var(--columns) - 1) * var(--layout-guild-list-width));
 }
