@@ -12,7 +12,7 @@ Welcome! This repo contains a collection CSS snippets for [Fluxer](https://githu
   <img src="./repo-assets/preview-colorful-titlebar-buttons.gif" alt="displaying the snippet visually"/>
 
   
-- [discord-like-profiles](./snippets/discord-like-profiles) <sub>*by @deeruwu*</sub> : mimics the look of Discord's profiles
+- [discord-like-profiles](./snippets/discord-like-profiles.css) <sub>*by @deeruwu*</sub> : mimics the look of Discord's profiles
 
   <img src="./repo-assets/discord-like-profiles.png" alt="displaying the snippet visually" width="200px"/>
 
@@ -22,7 +22,7 @@ Welcome! This repo contains a collection CSS snippets for [Fluxer](https://githu
   <img src="./repo-assets/dm-fav-icons.webp" alt="displaying the snippet visually" height="200px"/>
 
   
-- [expanded-css-textarea](./snippets/expanded-css-textarea) <sub>*by @DeviMorris#1111*</sub> : increases the height of the in-app css area, also making it adjustable
+- [expanded-css-textarea](./snippets/expanded-css-textarea.css) <sub>*by @DeviMorris#1111*</sub> : increases the height of the in-app css area, also making it adjustable
 
   <img src="./repo-assets/expanded-css-textarea.png" alt="displaying the snippet visually" height="200px"/>
 
