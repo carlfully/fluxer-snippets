@@ -1,13 +1,17 @@
-/* server-columns by carlfully*/
+/* server-columns by carlfully */
 :root {
-     --columns: 2; /* please just use numbers like 2, 3, 4, 5 and such, I don't want to code weird cases :< */
-    --layout-guild-list-width: 4.0rem; /* make columns more compact*/
+    --columns: 2; /* please just use numbers like 2, 3, 4, 5 and such, I don't want to code weird cases :< */
+    --layout-guild-list-width: 4.0rem; /* make columns more compact */
 }
- 
+
 [class*="GuildsLayout.module__guildListContent_"], [class*="GuildsLayout.module__guildListScrollerWrapper_"] {
     width: calc(70px + (var(--columns) - 1) * var(--layout-guild-list-width));
- }
- 
+}
+
+[class*="GuildsLayout.module__guildsLayoutContainer_"] {
+    gap: 0.5rem;
+}
+
 [class*="GuildsLayout.module__contentContainer_"] {
     padding-left: calc( (var(--columns) - 1) * var(--layout-guild-list-width));
 }
@@ -28,11 +32,11 @@
     grid-column-start: 1;
     grid-column-end: span var(--columns);
 }
-    
+
 [class*="GuildsLayout.module__guildDivider_"] {
     display: none;
 }
-    
+
 /* user area */
 [class*="GuildsLayout.module__userAreaWrapper_"] {
     width: calc(var(--layout-guild-list-width) * var(--columns) + var(--layout-sidebar-width));
