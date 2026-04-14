@@ -1,0 +1,22 @@
+/* wobbachu#6082 folder utilities! Slightly tweaked by carlfully for consistency */
+
+/* Folder Color = Folder Color */
+[class*="GuildFolderItem\.module__folderContainer__"] { --folder-fill: 100%;}
+
+/* Guild Icon Border */
+[class*="GuildsLayout\.module__guildIcon__"] {
+--border-size: 3px; /*We're gonna be making a "transparent" border to contrast with the folder color*/
+--added-icon-size: 5px; /*This is to make the border extend out of the folder for better visibility, I think*/
+height: calc(var(--guild-icon-size) + var(--border-size) + var(--added-icon-size));
+width: calc(var(--guild-icon-size) + var(--border-size) + var(--added-icon-size));
+border: var(--border-size) solid var(--background-secondary); /* "Transparent" color is the secondary color :P */
+}
+
+/* Folder Icon Color */
+[clas*="GuildFolderItem\.module__folderIcon__" {
+--mix-color: hsl(244 5 15); /* Chosen color */
+--desired-mix: 30%; /* How much of the original color do you want present? */
+/* Color calcs! */
+--other-mix: calc(100% - var(--desired-mix));
+color: color-mix(in hsl, var(--mix-color) var(--other-mix), var(--folder-accent) var(--desired-mix));
+}

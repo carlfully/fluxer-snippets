@@ -1,0 +1,36 @@
+/* ===== RIGHT-ALIGN YOUR MESSAGES (First + Grouped) ===== */
+/* from Tommy_G#8031 */
+
+/* First message with avatar */
+[class*="message"]:has([data-user-id="ENTER-YOUR-USERID-HERE"]):not([class*="messageGrouped"]) {
+  direction: rtl;
+}
+
+[class*="message"]:has([data-user-id="ENTER-YOUR-USERID-HERE"]):not([class*="messageGrouped"]) > * {
+  direction: ltr;
+}
+
+/* Grouped messages (following your first message) */
+[data-is-group-start="true"]:has([data-user-id="ENTER-YOUR-USERID-HERE"]) ~ div [class*="messageGrouped"] {
+  direction: rtl;
+}
+
+[data-is-group-start="true"]:has([data-user-id="ENTER-YOUR-USERID-HERE"]) ~ div [class*="messageGrouped"] > * {
+  direction: ltr;
+}
+
+/* Reset for other users' grouped messages */
+[data-is-group-start="true"]:not(:has([data-user-id="ENTER-YOUR-USERID-HERE"])) ~ div [class*="messageGrouped"] {
+  direction: ltr;
+}
+
+/* Message content styling */
+[class*="messageContent"]:has([data-user-id="ENTER-YOUR-USERID-HERE"]) {
+  margin-left: auto;
+  margin-right: 0;
+  max-width: 60%;
+  background: var(--brand-primary);
+  color: #fff;
+  border-radius: var(--radius-xl) var(--radius-md) var(--radius-md) var(--radius-xl);
+  padding: var(--spacing-3) var(--spacing-4);
+}
