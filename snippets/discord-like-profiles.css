@@ -105,7 +105,8 @@
 [class*="CustomStatusDisplay"] > [class*="CustomStatusDisplay.module__content_"],
 [class*="UserProfilePopout"] > [class*="CustomStatusDisplay.module__content_"],
 [class*="UserProfileModal"] > [class*="CustomStatusDisplay.module__content_"],
-[class*="ProfilePreview"] > [class*="CustomStatusDisplay.module__content_"] {
+[class*="ProfilePreview"] > [class*="CustomStatusDisplay.module__content_"],
+[class*="UserAreaPopout.module__customStatusPlaceholder_"] {
 	margin: 0.25rem 0.5rem;
 }
 
