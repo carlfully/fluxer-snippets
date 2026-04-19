@@ -34,7 +34,8 @@
 }
 
 [class*="GuildsLayout.module__guildDivider_"] {
-    display: none;
+    grid-column: 1 / -1;
+    width: unset;
 }
 
 /* user area */
