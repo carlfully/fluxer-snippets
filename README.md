@@ -46,5 +46,14 @@ Welcome! This repo contains a collection CSS snippets for [Fluxer](https://githu
 
   <img src="./repo-assets/oneko-message-bar-screenshot.png" alt="displaying the snippet visually" width="200px"/>
 
+- [ImproveUserArea](https://github.com/GH0STP4WZ/Fluxer-CSS-Snippets/blob/main/Snippets/CSS/ImprovedUserArea.css) <sub>*by @GH0STP4WZ#0001*</sub> : enhances the user area by hiding the Voice Call buttons and showing you more information
+
+  <img src="https://github.com/GH0STP4WZ/Fluxer-CSS-Snippets/raw/main/Previews/ImprovedUserArea/record-2026-07-29_10-54-37.gif" alt="displaying the snippet visually"/>
+
+- [Usernameplates](https://github.com/GH0STP4WZ/Fluxer-CSS-Snippets/blob/main/Snippets/CSS/UserNamePlates.css) <sub>*by @GH0STP4WZ#0001*</sub> : a small redesign of Usernames in message headers to give them a little extra flair. Role Color Agnostic, Should work with any role color. Name Legibility with darker role colors on dark mode, or lighter role colors on light mode is not guaranteed.
+
+  <img src="https://github.com/GH0STP4WZ/Fluxer-CSS-Snippets/raw/main/Previews/UserNamePlates/image.png" alt="displaying the snippet visually"/>
+  <img src="https://github.com/GH0STP4WZ/Fluxer-CSS-Snippets/raw/main/Previews/UserNamePlates/image2.png" alt="displaying the snippet visually"/>
+
 # How to apply
 To apply any of the snippets, you can simply copy the text inside the .css file and paste it in Fluxer's settings, more specifically inside `Look & feel > Theme > Custom Theme Tokens > Custom CSS Overrides`. We do this because simply importing with Fluxer's built-in theme sharing will just override anything else you already had, while these snippets are made to be along with your favourite theme!
