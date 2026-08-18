@@ -61,15 +61,15 @@ Welcome! This repo contains a collection CSS snippets for [Fluxer](https://githu
 
 - [Better Bot tags](./snippets/better-bottags.css) <sub>*by @GH0STP4WZ#0001*</sub> : If a bot message is a webhook, show it as a webhook.
 
-  <img src="./repo-assets/better-bottags.png" alt="displaying the snippet visually" width="200px"/>
+  <img src="./repo-assets/better-bottags.png" alt="displaying the snippet visually" height="200px"/>
 
 - [Enhanced Callouts](https://github.com/GH0STP4WZ/Fluxer-CSS-Snippets/blob/main/Snippets/MDs/Enhanced%20Alert%20Blocks.md) <sub>*by @GH0STP4WZ#0001*</sub> : More Stylized callouts which stand out a bit more. Has 3 variants!
 
-  <img src="./repo-assets/better-callouts.png" alt="displaying the snippet visually" width="200px"/>
+  <img src="./repo-assets/better-callouts.png" alt="displaying the snippet visually" height="200px"/>
 
 - [Iconify Search](https://github.com/GH0STP4WZ/Fluxer-CSS-Snippets/blob/main/Snippets/MDs/Iconify%20Search.md) <sub>*by @GH0STP4WZ#0001*</sub> : Collapses the search bar in the Channel header into an icon that matches the style of the other buttons, allowing it to take up less space and expand when needed.
 
-  <img src="./repo-assets/iconify-search.gif" alt="displaying the snippet visually" width="200px"/>
+  <img src="./repo-assets/iconify-search.gif" alt="displaying the snippet visually" height="200px"/>
 
 
 # How to apply
