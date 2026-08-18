@@ -1,0 +1,12 @@
+/*by @GH0STP4WZ#0001, from fluxer.gg/themes*/
+[data-flx-author-webhook="true"] {
+  .ChannelUserTag\.module__tag___XzY5Mm {
+    span {
+      font-size: 0;
+      &:before {
+        content: "WEBHOOK";
+        font-size: 10px;
+      }
+    }
+  }
+}
