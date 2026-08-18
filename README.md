@@ -55,5 +55,22 @@ Welcome! This repo contains a collection CSS snippets for [Fluxer](https://githu
   <img src="https://github.com/GH0STP4WZ/Fluxer-CSS-Snippets/raw/main/Previews/UserNamePlates/image.png" alt="displaying the snippet visually"/>
   <img src="https://github.com/GH0STP4WZ/Fluxer-CSS-Snippets/raw/main/Previews/UserNamePlates/image2.png" alt="displaying the snippet visually"/>
 
+- [Compact Memberlist](https://github.com/GH0STP4WZ/Fluxer-CSS-Snippets/blob/main/Snippets/MDs/Compact%20Members%20List.md) <sub>*by @GH0STP4WZ#0001*</sub> : Fluxer on a Small Screen can be annoying. This snippet hides the Members List until you hover over it, giving you more space to view messages.
+
+  <img src="./repo-assets/compact-memberlist.gif" alt="displaying the snippet visually" width="200px"/>
+
+- [Better Bot tags](./snippets/better-bottags.css) <sub>*by @GH0STP4WZ#0001*</sub> : If a bot message is a webhook, show it as a webhook.
+
+  <img src="./repo-assets/better-bottags.png" alt="displaying the snippet visually" width="200px"/>
+
+- [Enhanced Callouts](https://github.com/GH0STP4WZ/Fluxer-CSS-Snippets/blob/main/Snippets/MDs/Enhanced%20Alert%20Blocks.md) <sub>*by @GH0STP4WZ#0001*</sub> : More Stylized callouts which stand out a bit more. Has 3 variants!
+
+  <img src="./repo-assets/enhanced-callouts.png" alt="displaying the snippet visually" width="200px"/>
+
+- [Iconify Search](https://github.com/GH0STP4WZ/Fluxer-CSS-Snippets/blob/main/Snippets/MDs/Iconify%20Search.md) <sub>*by @GH0STP4WZ#0001*</sub> : Collapses the search bar in the Channel header into an icon that matches the style of the other buttons, allowing it to take up less space and expand when needed.
+
+  <img src="./repo-assets/iconify-search.gif" alt="displaying the snippet visually" width="200px"/>
+
+
 # How to apply
 To apply any of the snippets, you can simply copy the text inside the .css file and paste it in Fluxer's settings, more specifically inside `Look & feel > Theme > Custom Theme Tokens > Custom CSS Overrides`. We do this because simply importing with Fluxer's built-in theme sharing will just override anything else you already had, while these snippets are made to be along with your favourite theme!
