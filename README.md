@@ -71,6 +71,10 @@ Welcome! This repo contains a collection CSS snippets for [Fluxer](https://githu
 
   <img src="./repo-assets/iconify-search.gif" alt="displaying the snippet visually" height="200px"/>
 
+- [Dynamic Send Button](https://github.com/GH0STP4WZ/Fluxer-CSS-Snippets/blob/main/Snippets/MDs/Dynamic%20Send%20Button.md) <sub>*by @GH0STP4WZ#0001*</sub> : Dynamically hides the Send button (if enabled) until there is actually something to send
+
+  <img src="./repo-assets/dynamic-sendbutton.png" alt="displaying the snippet visually" height="200px"/>
+
 
 # How to apply
 To apply any of the snippets, you can simply copy the text inside the .css file and paste it in Fluxer's settings, more specifically inside `Look & feel > Theme > Custom Theme Tokens > Custom CSS Overrides`. We do this because simply importing with Fluxer's built-in theme sharing will just override anything else you already had, while these snippets are made to be along with your favourite theme!
