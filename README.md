@@ -75,6 +75,8 @@ Welcome! This repo contains a collection CSS snippets for [Fluxer](https://githu
 
   <img src="./repo-assets/dynamic-sendbutton.png" alt="displaying the snippet visually" height="200px"/>
 
+- [Right Align Self](./snippets/right-align-self.css) <sub>*by Tommy_G#8031*</sub> : Places your own messages at the right, like other messaging platforms
+
 
 # How to apply
 To apply any of the snippets, you can simply copy the text inside the .css file and paste it in Fluxer's settings, more specifically inside `Look & feel > Theme > Custom Theme Tokens > Custom CSS Overrides`. We do this because simply importing with Fluxer's built-in theme sharing will just override anything else you already had, while these snippets are made to be along with your favourite theme!
