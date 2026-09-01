@@ -1,47 +1,67 @@
+/**
+ * @name Online status as borders
+ * @description Displays user online status as a border around their profile picture
+ * @author deer
+ * @version Canary
+ * @tags Snippet
+ */
+
+body {
+	container-name: body;
+
+	/* set the user online status appearance. | Options: off, on */
+	--OutlineOnlineStatus: on;
+}	
+
 /* ----------------------------------------------------------------------- */
-/* online-status as border rings by deer
-/* ----------------------------------------------------------------------- */
 
-/* hide original status indicator */
-[class*="BaseAvatar.module__statusContainer_"] {
-	display: none!important;
-}
-
-[class*="BaseAvatar"] > image {
-	mask: none;
-	border-radius: var(--radius-full)!important;
+@property --OutlineOnlineStatus {
+	syntax: 'off | on';
+	inherits: false;
+	initial-value: on;
 }
 
-[class*="BaseAvatar.module__container_"] {
-	border-radius: var(--radius-full)!important;
-	overflow: hidden;
-}
-
-
-[class*="BaseAvatar.module__container_"][aria-label*="Offline"],
-[class*="BaseAvatar.module__container_"][aria-label*="Do Not Disturb"],
-[class*="BaseAvatar.module__container_"][aria-label*="Idle"],
-[class*="BaseAvatar.module__container_"][aria-label*="Online"] {
-	border-width: 0.15rem;
-	border-style: solid;
-}
-
-[class*="BaseAvatar.module__container_"][aria-label*="Offline"] {
-	border-color: var(--status-offline);
-}
-[class*="BaseAvatar.module__container_"][aria-label*="Do Not Disturb"] {
-	border-color: var(--status-dnd);
-}
-[class*="BaseAvatar.module__container_"][aria-label*="Idle"] {
-	border-color: var(--status-idle);
-}
-[class*="BaseAvatar.module__container_"][aria-label*="Online"] {
-	border-color: var(--status-online);
-}
-
-/* pfp view outline medium */
-[class*="UserProfileModal"] [class*="BaseAvatar.module__container_"],
-[class*="ProfileCardBanner"] [class*="BaseAvatar.module__container_"],
-[class*="YouPage"] [class*="BaseAvatar.module__container_"]{
-	border-width: 4px;
+@container body style(--OutlineOnlineStatus: on) {
+	/* hide original status indicator */
+	[data-flx="ui.base-avatar.status-container"] {
+		display: none!important;
+	}
+  
+	[data-flx="ui.base-avatar.image-frame"] {
+      mask: unset;
+    }
+	
+	[data-flx="ui.status-aware-avatar.avatar"] {
+		border-radius: var(--radius-full)!important;
+		overflow: hidden;
+	}
+	
+	
+	[data-flx="ui.status-aware-avatar.avatar"][data-flx-status="offline"],
+	[data-flx="ui.status-aware-avatar.avatar"][data-flx-status="dnd"],
+	[data-flx="ui.status-aware-avatar.avatar"][data-flx-status="idle"],
+	[data-flx="ui.status-aware-avatar.avatar"][data-flx-status="online"] {
+        border-width: 0.15rem;
+		border-style: solid;
+	}
+	
+	[data-flx="ui.status-aware-avatar.avatar"][data-flx-status="offline"] {
+		border-color: var(--status-offline);
+	}
+	[data-flx="ui.status-aware-avatar.avatar"][data-flx-status="dnd"] {
+		border-color: var(--status-dnd);
+	}
+	[data-flx="ui.status-aware-avatar.avatar"][data-flx-status="idle"] {
+		border-color: var(--status-idle);
+	}
+	[data-flx="ui.status-aware-avatar.avatar"][data-flx-status="online"] {
+		border-color: var(--status-online);
+	}
+	
+	/* pfp view outline medium */
+	[class*="UserProfileModal"] [data-flx="ui.status-aware-avatar.avatar"],
+	[class*="ProfileCardBanner"] [data-flx="ui.status-aware-avatar.avatar"],
+	[class*="YouPage"] [data-flx="ui.status-aware-avatar.avatar"]{
+		border-width: 4px;
+	}
 }

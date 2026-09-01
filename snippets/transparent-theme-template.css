@@ -1,40 +1,42 @@
-/* ----------------------------------------------------------------------- */
-/* simple transparent theme template by deer
-/* this is meant to be a good starting point to use for your own themes.
-/* ----------------------------------------------------------------------- */
+/**
+ * @name Transparent theme template
+ * @description customizable template for transparent themes. can also just be a used as a theme on its own.
+ * @author deer
+ * @version 1.1
+ * @tags canary, template, transparent
+ */
 
 :root {
-	/* Background Image */
-	--ThemeBackgroundImage: var(--bg-1);
+    /* ----------------------------------------------------------------------- */
+    /* BACKGROUND SETTINGS
+    /* ----------------------------------------------------------------------- */
+  
+	/* Background Image - credits to ThaSilentArtist.  */
+	--theme-background-image: url("https://fluxerusercontent.com/attachments/1474610319297830991/1493962211325685781/bg-1.png");
+    /* BG image opacity. 0 is fully transparent, 1 is fully opaque */
+	--theme-background-opacity: 0.3;
+    /* BG image blurring. Set to 0 to remove blur */
+	--theme-background-blur: 10px;
 	/* fallback color behind the background image. can be used to give your bg image a tint */
-	--ThemeBackgroundColor: #02172c;
+	--theme-background-color: #02172c;
 	/* Image position | center, left, right, bottom, top */
-	--ThemeBackgroundPosition: top;
+	--theme-background-position: top;
 	/* To cover the entire app, set to "cover". You can also set it to "100% 100%" but the image will be stretched. Set to "contain" to see the entire image */
-	--ThemeBackgroundSize: cover;
+	--theme-background-size: cover;
 	/* if you want the image to repeat */
-	--ThemeBackgroundRepeat: no-repeat;
-	/* Set to 0 to remove blur */
-	--ThemeBackgroundBlur: 10px;
-	/* BG image opacity. 0 is fully transparent, 1 is fully opaque */
-	--ThemeBackgroundOpacity: 0.3;
-
-	/* ----------------------------------------------------------------------- */
-	/* background presets - credits to ThaSilentArtist. 
-	/* this is where you should add your own images. 
-	/* NOTE: images have to be uploaded to fluxer first before you can use them.
-	/* ----------------------------------------------------------------------- */
-	--bg-1: url("https://fluxerusercontent.com/attachments/1474610319297830991/1481279988511911959/41511cd77e70.png");
-	--bg-2: url(""); /* (add your own here) */
-	--bg-3: url("");
+	--theme-background-repeat: no-repeat;
 }
+
+/* ----------------------------------------------------------------------- */
+/* BUILT IN THEME STYLES
+/* ----------------------------------------------------------------------- */
 
 /* dark-theme specific tweaks. this one can generally be ignored, but ive decided to add it as an example.
 /* you can find these theme-specific colors through dev tools in the fluxer client here:
 /* sources -> fluxer_app/src/styles/generated/color-system.css */
 .theme-dark {
 	/* these are fluxer's built in background colors, adjusted to add slight transparency */
-	--background-opacity: 0.9;
+	--background-opacity: 0.95;
 	
 	--background-primary: hsla(220, calc(13% * var(--saturation-factor)), 5%, var(--background-opacity));
 	--background-secondary: hsla(220, calc(13% * var(--saturation-factor)), 11.18%, var(--background-opacity));
@@ -45,12 +47,12 @@
 
 /* light-theme specific tweaks */
 .theme-light {
-	--ThemeBackgroundColor: #c0defc;
+	--theme-background-color: #c0defc;
 
 }
 /* coal-theme specific tweaks go here */
 .theme-coal {
-	--ThemeBackgroundColor: #000;
+	--theme-background-color: #000;
 }
 
 /* ---------------------------------------------------------------- */
@@ -58,7 +60,7 @@
 /* ---------------------------------------------------------------- */
 
 html {
-	background: var(--ThemeBackgroundColor);
+	background: var(--theme-background-color);
 }
 
 /* prevent background turning black in mobile view */
@@ -71,25 +73,27 @@ body::before {
 	content: "";
 	position: fixed;
 	inset: 0;
-	background: var(--ThemeBackgroundImage);
-	background-size: var(--ThemeBackgroundSize);
-	background-position: var(--ThemeBackgroundPosition);
-	background-repeat: var(--ThemeBackgroundRepeat);
-	filter: blur(var(--ThemeBackgroundBlur));
-	opacity: var(--ThemeBackgroundOpacity);
+	background: var(--theme-background-image);
+	background-size: var(--theme-background-size);
+	background-position: var(--theme-background-position);
+	background-repeat: var(--theme-background-repeat);
+	filter: blur(var(--theme-background-blur));
+	opacity: var(--theme-background-opacity);
 	z-index: -1;
 }
-
 
 /* ---------------------------------------------------------------- */
 /* Add Transparency
 /* this is safer than overwriting the color variables directly
 /* ---------------------------------------------------------------- */
-html:not(.auth-page) [class*="App.module__appContainer_"],
+
+/* remove ibackgrounds. this is safer than overwriting the color variables directly */
+html:not(.auth-page) [data-flx="app.app.app-wrapper.app-container"],
+[data-flx="app.app.app-wrapper.app-container"],
 [class*="GuildsLayout.module__guildsLayoutContainer_"],
 [class*="GuildsLayout.module__guildListScrollContainer_"],
 [class*="GuildsLayout.module__contentContainer_"],
-[class*="UserArea.module__userAreaInnerWrapper_"],
+[data-flx="app.user-area.user-area-inner.section"],
 [class*="OutlineFrame.module__frame_"],
 [class*="GuildsLayout.module__contentInner_"],
 [class*="GuildLayout.module__guildLayoutContainer_"],
@@ -98,18 +102,10 @@ html:not(.auth-page) [class*="App.module__appContainer_"],
 [class*="ChannelLayout.module__channelLayoutContainer_"],
 [class*="ChannelIndexPage.module__channelGrid_"],
 [class*="ChannelHeader.module__headerContainer_"],
-[class*="ChannelChatLayout.module__container_"],
-[class*="InputWrapper.module__box_"],
+[data-flx="channel.channel-chat-layout.container"],
+[data-flx="channel.lexical-channel-textarea-content.textarea-outer"],
 [class*="GuildHeader.module__headerContainer_"],
-[class*="DMLayout.module__dmLayoutContainer_"],
-[class*="DMList.module__dmListContainer_"],
-[class*="DMList.module__dmListHeader_"],
-[class*="DMList.module__desktopScroller_"],
-[class*="DMList.module__dmChannelList_"],
-[class*="DMLayout.module__contentColumn_"],
-[class*="DMLayout.module__contentInner_"],
 [class*="DMFriendsView.module__container_"],
-[class*="UserProfileModal.module__modalContainer_"],
 [class*="Divider.module__text_"],
 [class*="Divider.module__dateWithUnreadText_"],
 [class*="SplashScreen.module__splashOverlay_"],
@@ -120,79 +116,85 @@ html:not(.auth-page) [class*="App.module__appContainer_"],
 [class*="NotificationsPage.module__container_"],
 [class*="SelectBottomSheet.module__trigger_"],
 [class*="NotificationsPage.module__bookmarkButton_"],
-[class*="YouPage.module__profile_"],
-[class*="YouPage.module__noteIconWrapper_"],
-[class*="DMList.module__mobileContainer_"],
-[class*="DMList.module__mobileScroller_"],
-[class*="DMList.module__mobileHeaderButton_"],
-[class*="DMList.module__mobileAddFriendButton_"],
 [class*="MemberListContainer.module__memberListScroller_"],
 [class*="ChannelSearchResults.module__container_"],
-[class*="GuildNavbarSkeleton.module__skeletonHeader_"]
+[class*="GuildNavbarSkeleton.module__skeletonHeader_"],
+[data-flx="discovery.discovery.discovery-navbar.navbar"],
+/* dm list & chat */
+[data-flx="channel.direct-message.dm-layout.content-inner--2"],
+[data-flx="channel.direct-message.dm-list.dm-list-header.show.button"],
+[data-flx="channel.direct-message.dm-list.desktop-scroller"],
+[data-flx="channel.direct-message.dm-list.dm-channel-list"], /* dm users */
+[data-flx="channel.direct-message.dm-layout.content-column--2"],
+[data-flx="channel.direct-message.dm-list.dm-list-container"],
+[data-flx="channel.direct-message.dm-layout.dm-layout-container"],
+[data-flx="channel.direct-message.dm-layout.dm-list-column--2"],
+/* vc */
+[data-flx="voice.compact-voice-call-view.compact-voice-call-view-inner.section.voice-root-pointer-activity"],
+[data-flx="channel.channel-view.channel-compact-call-surface.compact-call-wrapper"],
+[data-flx="voice.compact-voice-call-view.compact-voice-call-view-inner.content-area"],
+[data-flx="voice.compact-voice-call-view.avatar-fallback-node.audio-avatar-layout"],
+[data-flx="channel.channel-view.guild-channel-view.voice-channel-join-empty-state.voice-join-empty-state"],
+[data-flx="voice.compact-voice-call-view.compact-voice-call-placeholder-view.content-area"],
+[data-flx="voice.compact-voice-call-view.compact-voice-call-placeholder-view.audio-avatar-layout"],
+[data-flx="voice.compact-voice-call-view.compact-voice-call-placeholder-view.container"],
+[data-flx="channel.channel-view.dm-channel-view.compact-call-wrapper"],
+[data-flx="channel.channel-view.guild-channel-view.voice-active-header-wrapper"],
+[data-flx="channel.channel-view.channel-view-scaffold.content-grid"],
+[data-flx="channel.channel-view.dm-channel-view.voice-active-header-wrapper"]
 {
-	background: transparent;
+	background: transparent!important;
 }
-
 
 /* ---------------------------------------------------------------- */
 /* Add Transparency Part 2 - This list contains panels where you might
 /* want to bring back a background color. you have to pick and choose.
 /* ---------------------------------------------------------------- */
 
-/* loading splashscreen */
-[class*='SplashScreen.module__splashContent_'],
-/* server sidebar */
-[class*="GuildsLayout.module__guildListScroller"],
-/* dm list */
-[class*="DMLayout.module__dmListColumn_"],
-/* server channel list */
-[class*="GuildNavbar.module__guildNavbarContainer_"],
-/* self status */
-[class*="GuildsLayout.module__userAreaWrapper_"],
-/* channel header */
-[class*="ChannelHeader.module__headerWrapper_"],
-/* channel member list */
-[class*="MemberListContainer.module__memberListContainer_"],
-/* channel message container */
-[class*="ChannelChatLayout.module__messagesArea_"],
-/* chat input area */
-[class*='ChannelChatLayout.module__textareaArea_'],
-/* friendslist */
-[class*='DMFriendsView.module__content_'],
-/* friendslist active now panel */
-[class*="ActiveNowSidebar.module__sidebar_"],
-/* search results */
-[class*="ChannelIndexPage.module__searchPanel_"],
-/* settings panel */
-[class*="Modal.module__root_"],
-/* VC Server panel */
-[class*="VoiceCallView.module__root_"],
-/* VC Server panel empty */
-[class*="ChannelIndexPage.module__emptyStateContent_"],
-/* VC DMs panel */
-[class*="DMChannelView.module__callBanner_"],
-/* VC DMs panel active */
-[class*="DMChannelView.module__compactVoiceCallView_"],
-/* server member page */
-[class*="GuildMembersPage.module__pageContainer_"],
-/* server member page member table */
-[class*="GuildMembersPage.module__tableWrapper_"],
-/* mobile bottom nav */
-[class*="MobileBottomNav.module__container_"],
-/* mobile notifications page header */
-[class*="NotificationsPage.module__header_"],
-/* mobile notifications page content */
-[class*="NotificationsPage.module__content_"],
-/* mobile own profile page */
-[class*="YouPage.module__container_"],
-/* server discovery explore page */
-[class*="DiscoveryPage.module__container_"],
-/* auth page */
-[class*="AuthLayout.module__card_"],
-/* server unavailable */
-[class*="GuildLayout.module__guildUnavailableContainer_"],
-/* server unavailable channels skeleton */
-[class*="GuildNavbarSkeleton.module__skeletonContainer_"] 
+[class*='SplashScreen.module__splashContent_'], /* loading splashscreen */
+[class*="GuildsLayout.module__guildListScroller"], /* server sidebar */
+[class*="DMLayout.module__dmListColumn_"], /* dm list */
+[class*="GuildNavbar.module__guildNavbarContainer_"], /* server channel list */
+[data-flx="app.guilds-layout.user-area-wrapper"], /* self status */
+[class*="ChannelHeader.module__headerWrapper_"], /* channel header */
+[class*="MemberListContainer.module__memberListContainer_"], /* channel member list */
+[class*="ChannelChatLayout.module__messagesArea_"], /* channel message container */
+[class*='ChannelChatLayout.module__textareaArea_'], /* chat input area */
+[class*='DMFriendsView.module__content_'], /* friendslist */
+[class*="ActiveNowSidebar.module__sidebar_"], /* friendslist active now panel */
+[class*="ChannelIndexPage.module__searchPanel_"], /* search results */
+[class*="Modal.module__root_"], /* modal panels */
+[class*="GuildMembersPage.module__pageContainer_"], /* server member page */
+[class*="GuildMembersPage.module__tableWrapper_"], /* server member page member table */
+[class*="DiscoveryPage.module__container_"], /* server discovery explore page */
+[class*="AuthLayout.module__card_"], /* auth page */
+[data-flx="channel.lexical-channel-textarea-content.textarea-outer"]::before /* user typing bottom gradient */
 {
 	background: transparent;
+}
+
+/* ---------------------------------------------------------------- */
+/* adding back some color to panels to look a little nicer
+/* ---------------------------------------------------------------- */
+[data-flx="app.native-titlebar.titlebar"] /* window titlebar */ {
+    background: #00000066;
+}
+
+[data-flx="app.user-area.user-area-inner.section"], /* self user status */
+[data-flx="channel.message-search-bar.message-search-bar.input-container"], /* searchbar */
+[data-flx="channel.direct-message.dm-friends-view.input.set-search-query"], /* searchbar */
+[data-flx="discovery.discovery.discovery-navbar.div"], /* discovery page navbar */
+[data-flx="discovery.discovery.discovery-guild-card.card.context-menu"], /* discovery page card */
+[data-flx="channel.lexical-channel-textarea-content.textarea-outer"]::after, /* chat input */
+[data-flx="voice.media-player.media-vertical-volume-control.mute-button.mute-click"], /* vc button */
+[data-flx="voice.voice-call-corner-controls.channel-header-icon.pop-out"], /* vc button */
+[data-flx="voice.voice-call-corner-controls.channel-header-icon.toggle-fullscreen"], /* vc button */
+[data-flx="voice.compact-voice-call-view.compact-call-height-toggle-button.height-toggle-pill"], /* vc button */
+[data-flx="channel.message-reactions.message-reaction-item.reaction-button.click"], /* react button */
+[data-flx="messaging.markdown.renderers.common.code-elements.rich-code-block-renderer.div--8"], /* code block */
+[class*="Markup.module__inline_"], /* inline code block */
+[data-flx="messaging.embeds.embed-card.embed-card.wrapper"], /* embed card */
+[data-flx="channel.message-attachments.forwarded-from-source.forwarded-source-button.jump-to-original--2"]  /* forwarded button */
+{
+    background: #ffffff0f!important;
 }
