@@ -84,19 +84,19 @@ body::before {
 
 /* ---------------------------------------------------------------- */
 /* Add Transparency
-/* this is safer than overwriting the color variables directly
+/* this is a bit tedious, but doesn't cause issues like overwriting the 
+/* color variables directly does
 /* ---------------------------------------------------------------- */
 
-/* remove ibackgrounds. this is safer than overwriting the color variables directly */
 html:not(.auth-page) [data-flx="app.app.app-wrapper.app-container"],
 [data-flx="app.app.app-wrapper.app-container"],
-[class*="GuildsLayout.module__guildsLayoutContainer_"],
-[class*="GuildsLayout.module__guildListScrollContainer_"],
-[class*="GuildsLayout.module__contentContainer_"],
+[data-flx="app.guilds-layout.guilds-layout"],
+[data-flx="app.guilds-layout.guild-list.guild-list-scroll-container"],
+[data-flx="app.guilds-layout.content-container"],
 [data-flx="app.user-area.user-area-inner.section"],
-[class*="OutlineFrame.module__frame_"],
-[class*="GuildsLayout.module__contentInner_"],
-[class*="GuildLayout.module__guildLayoutContainer_"],
+[data-flx="app.outline-frame.frame"],
+[data-flx="app.guilds-layout.main-content"],
+[data-flx="app.guild-layout.guild-layout-container--7"],
 [class*="ChannelListContent.module__channelListScroller_"],
 [class*="GuildLayout.module__guildMainContent_"],
 [class*="ChannelLayout.module__channelLayoutContainer_"],
@@ -105,7 +105,10 @@ html:not(.auth-page) [data-flx="app.app.app-wrapper.app-container"],
 [data-flx="channel.channel-chat-layout.container"],
 [data-flx="channel.lexical-channel-textarea-content.textarea-outer"],
 [class*="GuildHeader.module__headerContainer_"],
-[class*="DMFriendsView.module__container_"],
+[data-flx="app.guilds-layout.user-area-wrapper"], /* self status */
+[data-flx="app.guild-sidebar.guild-navbar"], /* server channel list, title & banner */
+[data-flx="channel.guild-members-page.members-table-view.table-surface"], /* server member page table inner */
+[data-flx="channel.guild-members-page.members-table-view.table-head"], /* server member page table header */
 [class*="Divider.module__text_"],
 [class*="Divider.module__dateWithUnreadText_"],
 [class*="SplashScreen.module__splashOverlay_"],
@@ -120,11 +123,14 @@ html:not(.auth-page) [data-flx="app.app.app-wrapper.app-container"],
 [class*="ChannelSearchResults.module__container_"],
 [class*="GuildNavbarSkeleton.module__skeletonHeader_"],
 [data-flx="discovery.discovery.discovery-navbar.navbar"],
+[data-flx="app.discovery-layout.guild-layout-container"], /* discovery page */
+[data-flx="channel.lexical-channel-textarea-content.textarea-outer"]::before, /* user typing bottom gradient */
 /* dm list & chat */
+[class*="DMFriendsView.module__container_"], /* friends list & activity panel */
 [data-flx="channel.direct-message.dm-layout.content-inner--2"],
-[data-flx="channel.direct-message.dm-list.dm-list-header.show.button"],
-[data-flx="channel.direct-message.dm-list.desktop-scroller"],
-[data-flx="channel.direct-message.dm-list.dm-channel-list"], /* dm users */
+[data-flx="channel.direct-message.dm-list.dm-list-header.show.button"], /* dm list quick switcher button */
+[data-flx="channel.direct-message.dm-list.desktop-scroller"], /* dm list */
+[data-flx="channel.direct-message.dm-list.dm-channel-list"], /* dm user section */
 [data-flx="channel.direct-message.dm-layout.content-column--2"],
 [data-flx="channel.direct-message.dm-list.dm-list-container"],
 [data-flx="channel.direct-message.dm-layout.dm-layout-container"],
@@ -154,8 +160,6 @@ html:not(.auth-page) [data-flx="app.app.app-wrapper.app-container"],
 [class*='SplashScreen.module__splashContent_'], /* loading splashscreen */
 [class*="GuildsLayout.module__guildListScroller"], /* server sidebar */
 [class*="DMLayout.module__dmListColumn_"], /* dm list */
-[class*="GuildNavbar.module__guildNavbarContainer_"], /* server channel list */
-[data-flx="app.guilds-layout.user-area-wrapper"], /* self status */
 [class*="ChannelHeader.module__headerWrapper_"], /* channel header */
 [class*="MemberListContainer.module__memberListContainer_"], /* channel member list */
 [class*="ChannelChatLayout.module__messagesArea_"], /* channel message container */
@@ -163,12 +167,8 @@ html:not(.auth-page) [data-flx="app.app.app-wrapper.app-container"],
 [class*='DMFriendsView.module__content_'], /* friendslist */
 [class*="ActiveNowSidebar.module__sidebar_"], /* friendslist active now panel */
 [class*="ChannelIndexPage.module__searchPanel_"], /* search results */
-[class*="Modal.module__root_"], /* modal panels */
-[class*="GuildMembersPage.module__pageContainer_"], /* server member page */
-[class*="GuildMembersPage.module__tableWrapper_"], /* server member page member table */
 [class*="DiscoveryPage.module__container_"], /* server discovery explore page */
-[class*="AuthLayout.module__card_"], /* auth page */
-[data-flx="channel.lexical-channel-textarea-content.textarea-outer"]::before /* user typing bottom gradient */
+[class*="AuthLayout.module__card_"] /* auth page */
 {
 	background: transparent;
 }
@@ -183,6 +183,7 @@ html:not(.auth-page) [data-flx="app.app.app-wrapper.app-container"],
 [data-flx="app.user-area.user-area-inner.section"], /* self user status */
 [data-flx="channel.message-search-bar.message-search-bar.input-container"], /* searchbar */
 [data-flx="channel.direct-message.dm-friends-view.input.set-search-query"], /* searchbar */
+[data-flx="channel.guild-members-page.members-table-view.search-input.input-change.text"], /* searchbar */
 [data-flx="discovery.discovery.discovery-navbar.div"], /* discovery page navbar */
 [data-flx="discovery.discovery.discovery-guild-card.card.context-menu"], /* discovery page card */
 [data-flx="channel.lexical-channel-textarea-content.textarea-outer"]::after, /* chat input */
@@ -194,7 +195,12 @@ html:not(.auth-page) [data-flx="app.app.app-wrapper.app-container"],
 [data-flx="messaging.markdown.renderers.common.code-elements.rich-code-block-renderer.div--8"], /* code block */
 [class*="Markup.module__inline_"], /* inline code block */
 [data-flx="messaging.embeds.embed-card.embed-card.wrapper"], /* embed card */
-[data-flx="channel.message-attachments.forwarded-from-source.forwarded-source-button.jump-to-original--2"]  /* forwarded button */
+[data-flx="channel.embeds.embed.rich-embed.embed"], /* embeds */
+[data-flx="voice.media-player.inline-audio-player.container.context-menu"], /* audio files */
+[data-flx="channel.message-attachments.forwarded-from-source.forwarded-source-button.jump-to-original--2"],  /* forwarded button */
+[data-flx="channel.guild-members-page.members-table-view.table-wrapper"],
+[data-flx="channel.guild-members-page.members-table-view.sort-button.sort-menu-open"],
+[data-flx="ui.form.combobox.input-group"]
 {
     background: #ffffff0f!important;
 }
