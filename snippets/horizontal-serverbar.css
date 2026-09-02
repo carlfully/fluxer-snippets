@@ -2,8 +2,8 @@
  * @name Horizontal serverbar
  * @description Repositions the server list to be horizontal (or on the right side)
  * @author deer
- * @version Canary
- * @tags Snippet
+ * @version 1.1
+ * @tags canary, snippet, layout
  */
 
 body {
@@ -16,12 +16,10 @@ body {
 	--Serverlist-Alignment: left;
 }
 
-
 /* ---------------------------------------------------------------- */
 /* Customization: horizontal server list */
 /* ---------------------------------------------------------------- */
 
-/* setting property setup */
 @property --Horizontal-Serverlist {
     syntax: 'off | on';
     inherits: false;
@@ -36,132 +34,114 @@ body {
 
 @container body style(--Horizontal-Serverlist: off) {
     @container body style(--Serverlist-Alignment: right) {
-          /* make channel list etc wider to match user area */
-          [data-flx="app.guilds-layout.user-area-wrapper"] {
-              width: var(--layout-sidebar-width);
-          }  
+        /* make channel list etc wider to match user area */
+        [data-flx="app.guilds-layout.user-area-wrapper"] {
+            width: var(--layout-sidebar-width);
+        }  
 
-          /* reverse layout order */
-          [data-flx="app.guilds-layout.guilds-layout"] {
-              display: flex;
-                flex-direction: row-reverse;
-          }
-          /* swap active indicator side*/
-          [data-flx="app.sidebar-nav.guild-list-item-presentation.guild-indicator"] {
-              left: unset;
-              right: var(--guild-list-indicator-inset);
-          }
-          [data-flx="app.sidebar-nav.guild-list-item-presentation.guild-indicator-bar"] {
-              border-radius:  var(--radius-full) 0 0 var(--radius-full);
-          }
+        /* reverse layout order */
+        [data-flx="app.guilds-layout.guilds-layout"] {
+            display: flex;
+              flex-direction: row-reverse;
+        }
+        /* swap active indicator side*/
+        [data-flx="app.sidebar-nav.guild-list-item-presentation.guild-indicator"] {
+            left: unset;
+            right: var(--guild-list-indicator-inset);
+        }
+        [data-flx="app.sidebar-nav.guild-list-item-presentation.guild-indicator-bar"] {
+            border-radius:  var(--radius-full) 0 0 var(--radius-full);
+        }
     }
 }
 
 @container body style(--Horizontal-Serverlist: on) {
-    
-    /* doesnt have any effect placed here. need to find a workaround. */
-    :root {
-        --layout-guild-list-width: 4.4rem; /* more compact */
-        --layout-sidebar-width: calc(16.875rem + var(--layout-guild-list-width))!important; /* make sidebar wider to compensate for extra space */
+    /* container for server list & rest */
+    [data-flx="app.guilds-layout.guilds-layout"] {
+        display: flex;
+        flex-direction: column;
     }
+
+    /* make user area match channel list width */
+    [data-flx="app.guilds-layout.user-area-wrapper"] {
+        width: var(--layout-sidebar-width);
+    }
+
+    /* scroller wrapper */
+    [data-flx="app.guilds-layout.guild-list.guild-list-scroller-wrapper"] {
+        height: var(--layout-guild-list-width);
+        width: 100%;
+    }
+    /* scroller wrap | changed to fix hover region while allowing panel labels */
+    [data-flx="app.guilds-layout.guild-list.guild-list-scroller-wrapper"] [class*="Scroller.module__scrollerWrap_"] {
+        overflow: hidden;
+    }
+
+    /* rotate scroller */
+    [data-flx="app.guilds-layout.guild-list.guild-list-scroll-container"] {
+        padding: var(--spacing-2) 0px;
+        height: 100vw;
+        transform: rotateZ(-90deg);
+    }
+
+    /* scroller child container*/
+    [data-flx="app.guilds-layout.guild-list.guild-list-scroll-container"] [class*="Scroller.module__scrollerChildren_"] {
+        align-items: flex-end;
+    }
+
+    /* serverlist section container */
+    [data-flx="app.guilds-layout.guild-list.guild-list-content"] {
+        width: var(--layout-guild-list-width);
+    }
+
+    /* unrotate server button & misc buttons */
+    [class*="GuildsLayout.module__guildListItem_"],
+    [data-flx="app.sidebar-nav.guild-folder-item.folder-header.toggle-expanded"] {
+        transform: rotateZ(-180deg);
+    }
+    /* unrotate server image & extra buttons */
+    [class*="GuildListDMItem.module__relative_"],
+    [class*="GuildsLayout.module__relative_"],
+    [class*="GuildFolderItem.module__relative_"],
+    [class*="GuildsLayout.module__addGuildButtonIcon_"],
+    /* unrotate discovery, create server & help */
+    [data-flx="app.sidebar-nav.discovery-button.div"],
+    [data-flx="app.sidebar-nav.add-guild-button.div"],
+    [data-flx="app.sidebar-nav.help-button.button.help"]
+    {
+        transform: rotateZ(-90deg);
+    } 
     
-    /* only show on desktop */
-    @media (min-width: 650px) {
-        
-
-        /* container for server list & rest */
-        [data-flx="app.guilds-layout.guilds-layout"] {
-            display: flex;
-            flex-direction: column;
+    
+    @container body style(--Serverlist-Alignment: left) {
+        [data-flx="app.guilds-layout.guild-list.guild-list-scroll-container"]  [data-flx="ui.scroller.scroller-children"] {
+            justify-content: start;
         }
+    }
 
-        /* make channel list etc wider to match user area */
-        [data-flx="app.guilds-layout.user-area-wrapper"] {
-            width: var(--layout-sidebar-width);
+    @container body style(--Serverlist-Alignment: center) {
+        [data-flx="app.guilds-layout.guild-list.guild-list-scroll-container"] [data-flx="ui.scroller.scroller-children"] {
+            justify-content: center;
         }
+    }
 
-        /* scroller wrapper */
-        [data-flx="app.guilds-layout.guild-list.guild-list-scroller-wrapper"] {
-            height: var(--layout-guild-list-width);
-            width: 100%;
-        }
-        /* scroller wrap | changed to fix hover region while allowing panel labels */
-        [data-flx="app.guilds-layout.guild-list.guild-list-scroller-wrapper"] [class*="Scroller.module__scrollerWrap_"] {
-            overflow: hidden;
-        }
+    @container body style(--Serverlist-Alignment: right) {
 
-        /* rotate scroller */
-        [class*="GuildsLayout.module__guildListScrollContainer_"] {
-            padding: var(--spacing-2) 0px;
-            width: var(--layout-guild-list-width);
-            height: calc(100vw - var(--ThemePanelMargin)*2 - var(--ThemePanelBorderThickness) * 2);
-
-            transform: rotateZ(-90deg);
-        }
-
-        /* scroller child container*/
-        [class*="GuildsLayout.module__guildListScrollContainer_"] [class*="Scroller.module__scrollerChildren_"] {
-            align-items: flex-end;
-        }
-
-        /* serverlist section container */
+        /* reverse server list */
         [data-flx="app.guilds-layout.guild-list.guild-list-content"] {
-            align-items: flex-end;
-            width: var(--layout-guild-list-width);
+            padding: unset;
+            display: flex;
+            flex-direction: column-reverse!important;
         }
 
-        /* serverlist top & lower section */
-        [class*="GuildsLayout.module__guildListTopSection_"],
-        [class*="GuildsLayout.module__guildListGuildsSection_"] {
-            width: unset;
+        /* reverse folders */
+        [data-flx="app.sidebar-nav.guild-folder-item.folder-container"] {
+            display: flex;
+            flex-direction: column-reverse!important;
         }
 
-        /* unrotate server button & misc buttons */
-        [class*="GuildsLayout.module__guildListItem_"],
-        [class*="GuildFolderItem.module__folderHeader_"] {
-            /*width: 3.7rem; */
-            transform: rotateZ(-180deg);
-        }
-        /* unrotate server image & extra buttons */
-        [class*="GuildListDMItem.module__relative_"],
-        [class*="GuildsLayout.module__relative_"],
-        [class*="GuildFolderItem.module__relative_"],
-        [class*="GuildsLayout.module__addGuildButtonIcon_"],
-        /* unrotate discovery, create server & help */
-        [data-flx="app.sidebar-nav.discovery-button.div"],
-        [data-flx="app.sidebar-nav.add-guild-button.div"],
-        [data-flx="app.sidebar-nav.help-button.button.help"]
-        {
-            transform: rotateZ(-90deg);
-        } 
-        
-        
-        @container body style(--Serverlist-Alignment: left) {
-            [class*="GuildsLayout.module__guildListScrollContainer_"] [class*="Scroller.module__scrollerChildren_"] {
-                justify-content: start;
-            }
-        }
-
-        @container body style(--Serverlist-Alignment: center) {
-            [class*="GuildsLayout.module__guildListScrollContainer_"] [class*="Scroller.module__scrollerChildren_"] {
-                justify-content: center;
-            }
-        }
-
-        @container body style(--Serverlist-Alignment: right) {
-
-            /* reverse server list */
-            [data-flx="app.guilds-layout.guild-list.guild-list-content"],
-            [class*="GuildsLayout.module__guildListTopSection_"], 
-            [class*="GuildsLayout.module__guildListGuildsSection_"] {
-                display: flex;
-                padding: unset;
-                flex-direction: column-reverse!important;
-            }
-
-            [class*="GuildsLayout.module__guildListScrollContainer_"] [class*="Scroller.module__scrollerChildren_"] {
-                justify-content: end;
-            }
+        [data-flx="app.guilds-layout.guild-list.guild-list-scroll-container"]  [data-flx="ui.scroller.scroller-children"] {
+            justify-content: end;
         }
     }
 }
