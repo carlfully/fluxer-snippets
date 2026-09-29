@@ -2,7 +2,7 @@
  * @name Transparent theme template
  * @description customizable template for transparent themes. can also just be a used as a theme on its own.
  * @author deer
- * @version 1.1
+ * @version 1.1.1
  * @tags canary, template, transparent
  */
 
@@ -168,7 +168,8 @@ html:not(.auth-page) [data-flx="app.app.app-wrapper.app-container"],
 [class*="ActiveNowSidebar.module__sidebar_"], /* friendslist active now panel */
 [class*="ChannelIndexPage.module__searchPanel_"], /* search results */
 [class*="DiscoveryPage.module__container_"], /* server discovery explore page */
-[class*="AuthLayout.module__card_"] /* auth page */
+[class*="AuthLayout.module__card_"], /* auth page */
+[data-flx="channel.messages.bottom-fade"] /* chat messages bottom gradient */
 {
 	background: transparent;
 }
