@@ -2,16 +2,7 @@
 Welcome! This repo contains a collection CSS snippets for [Fluxer](https://github.com/fluxerapp/fluxer), a FOSS Discord alternative.
 
 # List of snippets
-- [transparent theme template](./snippets/transparent-theme-template.css) <sub>*by @deeruwu*</sub> : simple, customizable theme template with a background image 
-  
-  <img src="./repo-assets/preview-transparent-theme-template.png" alt="displaying the snippet visually"/>
 
-  
-- [colorful-titlebar-buttons](./snippets/colorful-titlebar-buttons.css) <sub>*by @deeruwu*</sub> : modifies the titlebar buttons to be more colorful and have style
-  
-  <img src="./repo-assets/preview-colorful-titlebar-buttons.gif" alt="displaying the snippet visually"/>
-
-  
 - [discord-like-profiles](./snippets/discord-like-profiles.css) <sub>*by @deeruwu*</sub> : mimics the look of Discord's profiles
 
   <img src="./repo-assets/discord-like-profiles.png" alt="displaying the snippet visually" width="200px"/>
@@ -76,6 +67,11 @@ Welcome! This repo contains a collection CSS snippets for [Fluxer](https://githu
   <img src="./repo-assets/dynamic-sendbutton.png" alt="displaying the snippet visually" height="200px"/>
 
 - [Right Align Self](./snippets/right-align-self.css) <sub>*by Tommy_G#8031*</sub> : Places your own messages at the right, like other messaging platforms
+
+- [colorful-titlebar-buttons](./snippets/colorful-titlebar-buttons.css) <sub>*by @deeruwu*</sub> : modifies the titlebar buttons to be more colorful and have style
+  
+  <img src="./repo-assets/preview-colorful-titlebar-buttons.gif" alt="displaying the snippet visually"/>
+
 
 
 # How to apply
